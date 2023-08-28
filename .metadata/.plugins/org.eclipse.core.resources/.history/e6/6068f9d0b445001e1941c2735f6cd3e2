@@ -1,0 +1,18 @@
+package com.imaginnovate.entity;
+
+import javax.persistence.Entity;
+
+@Entity
+public class EmployeeTax {
+	
+	private String firstName;
+	
+	private String lastName;
+	
+	private Long salary;
+	
+	private Long empTax;
+	
+	private Long cess;
+
+}

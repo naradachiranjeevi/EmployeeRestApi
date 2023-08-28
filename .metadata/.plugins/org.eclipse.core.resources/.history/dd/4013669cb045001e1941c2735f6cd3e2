@@ -1,0 +1,20 @@
+package com.imaginnovate.exception;
+
+public class InvalidDataException extends RuntimeException {
+    private String id;
+    private String msg;
+
+    public InvalidDataException(String id, String msg) {
+        this.id = id;
+        this.msg = msg;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+}
+

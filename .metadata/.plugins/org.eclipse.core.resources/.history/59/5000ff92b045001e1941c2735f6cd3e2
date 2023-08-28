@@ -1,0 +1,5 @@
+package com.imaginnovate.exception;
+
+public class InvalidDataException {
+
+}

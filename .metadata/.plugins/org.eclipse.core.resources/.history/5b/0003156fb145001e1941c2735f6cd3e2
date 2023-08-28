@@ -1,0 +1,25 @@
+package com.imaginnovate.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.imaginnovate.entity.Employee;
+import com.imaginnovate.service.Empservice;
+
+@RestController
+public class EmpController {
+
+	@Autowired
+	private Empservice empservice;
+	
+	 @PostMapping("/saveEmp")
+	    public ResponseEntity<String> storeEmployee(@RequestBody Employee employee) {
+	        // Validate the data using DTO and return appropriate responses
+	        // Invoke service to store employee details
+		 empservice.saveEmp(employee);
+	       return ResponseEntity.ok("Employee details stored successfully");
+	    }
+}

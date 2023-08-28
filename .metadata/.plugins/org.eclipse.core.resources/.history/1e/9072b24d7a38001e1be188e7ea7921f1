@@ -1,0 +1,23 @@
+package com.demo.entity;
+
+import jakarta.annotation.Generated;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="COURSE_DTLS")
+
+public class Course {
+
+	
+	@Id
+	@Generated(startegy=GenerationType.IDENTITY)
+	private Integer id;
+	private String name;
+	private Double price;
+	}
+}

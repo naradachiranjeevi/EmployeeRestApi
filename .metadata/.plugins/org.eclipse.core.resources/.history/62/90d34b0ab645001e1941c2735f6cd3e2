@@ -1,0 +1,65 @@
+package com.imaginnovate.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.imaginnovate.entity.Employee;
+import com.imaginnovate.exception.InvalidDataException;
+import com.imaginnovate.repository.EmpRepo;
+
+@Service
+public class Empservice {
+
+	@Autowired
+	private EmpRepo employeeRepo;
+
+	public void saveEmp(Employee employee) {
+		validateData(employee);
+		employeeRepo.save(employee);
+
+	}
+
+	private void validateData(Employee employee) {
+		if (employee == null) {
+			throw new InvalidDataException(employee.getId(), "Invalid Employee Details");
+		}
+
+	}
+
+	public Employee calculateTaxDeductions() {
+		Employee employee;
+		double yearlySalary = calculateYearlySalary(employee);
+		double taxAmount = calculateTaxAmount(yearlySalary);
+		double cessAmount = calculateCessAmount(yearlySalary);
+
+		return null;
+	}
+
+	private double calculateYearlySalary(Employee employee) {
+		// Implement logic to calculate yearly salary considering DOJ and other factors
+		// For simplicity, let's assume employee's monthly salary is constant
+		return employee.getSalary() * 12;
+	}
+
+	private double calculateTaxAmount(double yearlySalary) {
+		if (yearlySalary <= 250000) {
+			return 0;
+		} else if (yearlySalary <= 500000) {
+			return 0.05 * (yearlySalary - 250000);
+		} else if (yearlySalary <= 1000000) {
+			return 0.05 * 250000 + 0.10 * (yearlySalary - 500000);
+		} else {
+			return 0.05 * 250000 + 0.10 * 500000 + 0.20 * (yearlySalary - 1000000);
+		}
+	}
+
+	private double calculateCessAmount(double yearlySalary) {
+		if (yearlySalary > 2500000) {
+			return 0.02 * (yearlySalary - 2500000);
+		}
+		return 0;
+	}
+
+}

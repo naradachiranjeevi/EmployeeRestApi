@@ -1,0 +1,11 @@
+package com.practice;
+
+public interface Vechile {
+    public void start();
+		
+	}
+	public class Car implements Vechile{
+		public void start() {
+			System.out.println("car start...");
+		}
+}

@@ -1,0 +1,29 @@
+package com.imaginnovate.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.imaginnovate.entity.Employee;
+import com.imaginnovate.exception.InvalidDataException;
+import com.imaginnovate.repository.EmpRepo;
+
+@Service
+public class Empservice {
+
+	@Autowired
+	private EmpRepo employeeRepo;
+
+	public void saveEmp(Employee employee) {
+		validateData(employee);
+		employeeRepo.save(employee);
+
+	}
+
+	private void validateData(Employee employee) {
+		if(employee == null) {
+			throw new InvalidDataException((long)employee.getId(), "Invalid Employee Details");
+		}
+		
+	}
+
+}

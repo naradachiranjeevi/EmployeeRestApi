@@ -1,0 +1,11 @@
+Spring:
+  datasource:
+     url: jdbc:mysql://localhost:3306/chiru
+     username: root
+     password: root
+     driver-class-name: com.mysql.cj.jbc.Driver
+  jpa:
+   hibernate:
+     ddl-auto: update
+     show-sql: true
+     

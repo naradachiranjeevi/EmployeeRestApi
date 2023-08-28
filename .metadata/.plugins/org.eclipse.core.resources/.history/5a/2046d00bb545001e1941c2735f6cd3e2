@@ -1,0 +1,58 @@
+package com.imaginnovate.entity;
+
+import javax.persistence.Entity;
+
+@Entity
+public class EmployeeTax {
+	
+	private String firstName;
+	
+	private String lastName;
+	
+	private Long salary;
+	
+	private Long empTax;
+	
+	private Long cess;
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public Long getSalary() {
+		return salary;
+	}
+
+	public void setSalary(Long salary) {
+		this.salary = salary;
+	}
+
+	public Long getEmpTax() {
+		return empTax;
+	}
+
+	public void setEmpTax(Long empTax) {
+		this.empTax = empTax;
+	}
+
+	public Long getCess() {
+		return cess;
+	}
+
+	public void setCess(Long cess) {
+		this.cess = cess;
+	}
+
+}

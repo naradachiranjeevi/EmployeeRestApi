@@ -1,0 +1,10 @@
+package com.demo.service;
+
+import com.demo.entity.Course;
+
+public interface CourseService {
+
+	public String upsert(Course course);
+	public Course getById(Integer cid)
+	
+}
